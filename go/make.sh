@@ -8,8 +8,9 @@ export GOHOSTARCH=amd64
 export GOOS=ucoresmp
 export GOARCH=amd64
 export GOROOT=$CURRENT
-export PATH=$PATH:$GOROOT/bin
+export PATH=$GOROOT/bin:$PATH
 export CGO_ENABLED=0
+export GOBIN=$GOROOT/bin
 
 build_go()
 {
@@ -32,10 +33,10 @@ clean_go()
 compile_go()
 {
 	cd "$GOROOT/testsuit"
-	6g "$1.go" && 6l -o "$1.out" "$1.6"
+	6g -o "$1.6" "$1.go" && 6l -o "$1.out" "$1.6"
 	mv "$1.out" "$GOROOT/../ucore/src/user-ucore/_initial/"
 	rm "$1.6"
-	rm "$GOROOT/../ucore/obj/sfs.img" 2> /dev/null
+    cd $GOROOT
 }
 
 rebuild_pkg()
@@ -46,6 +47,16 @@ rebuild_pkg()
 }
 
 case $1 in
+    all)
+        clean_go
+        build_go
+	    rm "$GOROOT/../ucore/obj/sfs.img" 2> /dev/null
+        compile_go hw1
+        compile_go hw2
+        compile_go peter
+        echo " exec all finished"
+        exit
+        ;;
 	clean)
 		clean_go
 		exit
@@ -55,6 +66,7 @@ case $1 in
 		exit
 		;;
 	compile)
+	    rm "$GOROOT/../ucore/obj/sfs.img" 2> /dev/null
 		compile_go $2
 		exit
 		;;
@@ -71,6 +83,7 @@ case $1 in
 		echo "    clean: make clean;"
 		echo "    compile %s: compile %s.go and put it in ucore's _initial;"
 		echo "    make, build: make the go compiler;"
+        echo "    all: clean;build;compile hw1,hw2,peter"
 		;;
 	'')
 		;;	
