@@ -1,0 +1,166 @@
+archive/tar.install: bytes.install io.install io/ioutil.install os.install strconv.install
+archive/zip.install: bufio.install compress/flate.install encoding/binary.install hash.install hash/crc32.install io.install io/ioutil.install os.install time.install
+asn1.install: big.install bytes.install fmt.install io.install os.install reflect.install strconv.install strings.install time.install
+big.install: encoding/binary.install fmt.install io.install os.install rand.install strings.install
+bufio.install: bytes.install io.install os.install strconv.install utf8.install
+bytes.install: io.install os.install unicode.install utf8.install
+cmath.install: math.install
+compress/bzip2.install: bufio.install io.install os.install sort.install
+compress/flate.install: bufio.install io.install math.install os.install sort.install strconv.install
+compress/gzip.install: bufio.install compress/flate.install hash.install hash/crc32.install io.install os.install
+compress/lzw.install: bufio.install fmt.install io.install os.install
+compress/zlib.install: bufio.install compress/flate.install hash.install hash/adler32.install io.install os.install
+container/heap.install: sort.install
+container/list.install:
+container/ring.install:
+container/vector.install:
+crypto.install: hash.install
+crypto/aes.install: os.install strconv.install
+crypto/blowfish.install: os.install strconv.install
+crypto/cast5.install: os.install
+crypto/cipher.install: io.install os.install
+crypto/des.install: encoding/binary.install os.install strconv.install
+crypto/dsa.install: big.install io.install os.install
+crypto/ecdsa.install: big.install crypto/elliptic.install io.install os.install
+crypto/elliptic.install: big.install io.install os.install sync.install
+crypto/hmac.install: crypto/md5.install crypto/sha1.install crypto/sha256.install hash.install os.install
+crypto/md4.install: crypto.install hash.install os.install
+crypto/md5.install: crypto.install hash.install os.install
+crypto/ocsp.install: asn1.install crypto.install crypto/rsa.install crypto/sha1.install crypto/x509.install crypto/x509/pkix.install os.install time.install
+crypto/openpgp.install: crypto.install crypto/openpgp/armor.install crypto/openpgp/error.install crypto/openpgp/packet.install crypto/openpgp/s2k.install crypto/rand.install crypto/rsa.install crypto/sha256.install hash.install io.install os.install strconv.install time.install
+crypto/openpgp/armor.install: bufio.install bytes.install crypto/openpgp/error.install encoding/base64.install io.install os.install
+crypto/openpgp/elgamal.install: big.install crypto/rand.install crypto/subtle.install io.install os.install
+crypto/openpgp/error.install: strconv.install
+crypto/openpgp/packet.install: big.install bytes.install compress/flate.install compress/zlib.install crypto.install crypto/aes.install crypto/cast5.install crypto/cipher.install crypto/dsa.install crypto/openpgp/elgamal.install crypto/openpgp/error.install crypto/openpgp/s2k.install crypto/rand.install crypto/rsa.install crypto/sha1.install crypto/subtle.install encoding/binary.install fmt.install hash.install io.install io/ioutil.install os.install strconv.install strings.install
+crypto/openpgp/s2k.install: crypto.install crypto/openpgp/error.install hash.install io.install os.install strconv.install
+crypto/rand.install: big.install bufio.install crypto/aes.install io.install os.install sync.install syscall.install time.install
+crypto/rc4.install: os.install strconv.install
+crypto/ripemd160.install: crypto.install hash.install os.install
+crypto/rsa.install: big.install crypto.install crypto/rand.install crypto/subtle.install hash.install io.install os.install
+crypto/sha1.install: crypto.install hash.install os.install
+crypto/sha256.install: crypto.install hash.install os.install
+crypto/sha512.install: crypto.install hash.install os.install
+crypto/subtle.install:
+crypto/tls.install: big.install bytes.install crypto.install crypto/aes.install crypto/cipher.install crypto/elliptic.install crypto/hmac.install crypto/md5.install crypto/rand.install crypto/rc4.install crypto/rsa.install crypto/sha1.install crypto/subtle.install crypto/x509.install encoding/pem.install hash.install io.install io/ioutil.install net.install os.install strconv.install strings.install sync.install time.install
+crypto/twofish.install: os.install strconv.install
+crypto/x509.install: asn1.install big.install bytes.install crypto.install crypto/dsa.install crypto/rsa.install crypto/sha1.install crypto/x509/pkix.install encoding/pem.install io.install os.install strings.install time.install
+crypto/x509/pkix.install: asn1.install big.install time.install
+crypto/xtea.install: os.install strconv.install
+csv.install: bufio.install bytes.install fmt.install io.install os.install strings.install unicode.install utf8.install
+debug/dwarf.install: encoding/binary.install os.install strconv.install
+debug/macho.install: bytes.install debug/dwarf.install encoding/binary.install fmt.install io.install os.install strconv.install
+debug/elf.install: bytes.install debug/dwarf.install encoding/binary.install fmt.install io.install os.install strconv.install
+debug/gosym.install: encoding/binary.install fmt.install os.install strconv.install strings.install
+debug/pe.install: debug/dwarf.install encoding/binary.install fmt.install io.install os.install strconv.install
+ebnf.install: go/scanner.install go/token.install os.install strconv.install unicode.install utf8.install
+encoding/ascii85.install: io.install os.install strconv.install
+encoding/base32.install: io.install os.install strconv.install
+encoding/base64.install: io.install os.install strconv.install
+encoding/binary.install: io.install math.install os.install reflect.install
+encoding/git85.install: bytes.install io.install os.install strconv.install
+encoding/hex.install: bytes.install io.install os.install strconv.install
+encoding/pem.install: bytes.install encoding/base64.install io.install os.install
+exec.install: bytes.install io.install os.install strconv.install strings.install syscall.install
+exp/gui.install: image.install image/draw.install os.install
+exp/gui/x11.install: bufio.install exp/gui.install image.install image/draw.install io.install log.install net.install os.install strconv.install strings.install time.install
+exp/norm.install: utf8.install
+exp/regexp/syntax.install: bytes.install os.install sort.install strconv.install strings.install unicode.install utf8.install
+exp/template/html.install: template.install template/parse.install
+expvar.install: bytes.install fmt.install http.install json.install log.install os.install runtime.install strconv.install sync.install
+flag.install: fmt.install os.install sort.install strconv.install
+fmt.install: bytes.install io.install math.install os.install reflect.install strconv.install strings.install unicode.install utf8.install
+go/ast.install: bytes.install fmt.install go/scanner.install go/token.install io.install os.install reflect.install strconv.install unicode.install utf8.install
+go/build.install: bytes.install exec.install fmt.install go/parser.install go/token.install log.install os.install path/filepath.install regexp.install runtime.install strconv.install strings.install
+go/doc.install: go/ast.install go/token.install io.install regexp.install sort.install strings.install template.install
+go/parser.install: bytes.install fmt.install go/ast.install go/scanner.install go/token.install io.install io/ioutil.install os.install path/filepath.install
+go/printer.install: bytes.install fmt.install go/ast.install go/token.install io.install os.install path/filepath.install runtime.install tabwriter.install
+go/scanner.install: bytes.install fmt.install go/token.install io.install os.install path/filepath.install sort.install strconv.install unicode.install utf8.install
+go/token.install: fmt.install sort.install strconv.install sync.install
+go/typechecker.install: fmt.install go/ast.install go/scanner.install go/token.install os.install
+go/types.install: big.install bufio.install fmt.install go/ast.install go/scanner.install go/token.install io.install os.install path/filepath.install runtime.install scanner.install sort.install strconv.install strings.install
+gob.install: bufio.install bytes.install fmt.install io.install math.install os.install reflect.install sync.install unicode.install utf8.install
+hash.install: io.install
+hash/adler32.install: hash.install os.install
+hash/crc32.install: hash.install os.install sync.install
+hash/crc64.install: hash.install os.install
+hash/fnv.install: encoding/binary.install hash.install os.install
+html.install: bytes.install io.install os.install strconv.install strings.install utf8.install
+http.install: bufio.install bytes.install compress/gzip.install crypto/rand.install crypto/tls.install encoding/base64.install encoding/binary.install fmt.install io.install io/ioutil.install log.install mime.install mime/multipart.install net.install net/textproto.install os.install path.install path/filepath.install runtime/debug.install sort.install strconv.install strings.install sync.install time.install url.install utf8.install
+http/cgi.install: bufio.install crypto/tls.install exec.install fmt.install http.install io.install io/ioutil.install log.install net.install os.install path/filepath.install regexp.install runtime.install strconv.install strings.install url.install
+http/fcgi.install: bufio.install bytes.install encoding/binary.install fmt.install http.install http/cgi.install io.install net.install os.install sync.install time.install
+http/pprof.install: bufio.install bytes.install fmt.install http.install os.install runtime.install runtime/pprof.install strconv.install strings.install time.install
+http/httptest.install: bytes.install crypto/rand.install crypto/tls.install flag.install fmt.install http.install net.install os.install time.install
+http/spdy.install: bytes.install compress/zlib.install encoding/binary.install http.install io.install os.install strings.install
+image.install: bufio.install io.install os.install strconv.install
+image/bmp.install: image.install io.install os.install
+image/draw.install: image.install image/ycbcr.install
+image/gif.install: bufio.install compress/lzw.install fmt.install image.install io.install os.install
+image/jpeg.install: bufio.install image.install image/ycbcr.install io.install os.install
+image/png.install: bufio.install compress/zlib.install fmt.install hash.install hash/crc32.install image.install io.install os.install strconv.install
+image/tiff.install: compress/lzw.install compress/zlib.install encoding/binary.install image.install io.install io/ioutil.install os.install
+image/ycbcr.install: image.install
+index/suffixarray.install: bytes.install regexp.install sort.install
+io.install: os.install sync.install
+io/ioutil.install: bytes.install io.install os.install path/filepath.install sort.install strconv.install
+json.install: bytes.install encoding/base64.install io.install os.install reflect.install runtime.install sort.install strconv.install strings.install unicode.install utf16.install utf8.install
+log.install: bytes.install fmt.install io.install os.install runtime.install sync.install time.install
+mail.install: bufio.install bytes.install encoding/base64.install fmt.install io.install io/ioutil.install log.install net/textproto.install os.install strconv.install strings.install time.install
+math.install:
+mime.install: bufio.install bytes.install fmt.install os.install strings.install sync.install unicode.install
+mime/multipart.install: bufio.install bytes.install crypto/rand.install fmt.install io.install io/ioutil.install mime.install net/textproto.install os.install strings.install
+net.install: bytes.install fmt.install io.install os.install rand.install reflect.install runtime/cgo.install sort.install sync.install syscall.install time.install
+net/dict.install: net/textproto.install os.install strconv.install strings.install
+net/textproto.install: bufio.install bytes.install fmt.install io.install io/ioutil.install net.install os.install strconv.install sync.install
+netchan.install: gob.install io.install log.install net.install os.install reflect.install strconv.install sync.install time.install
+old/template.install: bytes.install fmt.install io.install io/ioutil.install os.install reflect.install strconv.install strings.install unicode.install utf8.install
+os.install: runtime.install sync.install syscall.install utf16.install
+os/signal.install: os.install runtime.install
+os/user.install: fmt.install os.install runtime.install runtime/cgo.install strconv.install strings.install
+patch.install: bytes.install compress/zlib.install crypto/sha1.install encoding/git85.install fmt.install io.install os.install path.install strings.install
+path.install: os.install strings.install utf8.install
+path/filepath.install: bytes.install os.install runtime.install sort.install strings.install utf8.install
+rand.install: math.install sync.install
+reflect.install: math.install runtime.install strconv.install sync.install
+regexp.install: bytes.install io.install os.install strings.install utf8.install
+rpc.install: bufio.install fmt.install gob.install http.install io.install log.install net.install os.install reflect.install sort.install strings.install sync.install template.install unicode.install utf8.install
+rpc/jsonrpc.install: fmt.install io.install json.install net.install os.install rpc.install sync.install
+runtime.install:
+runtime/cgo.install:
+runtime/debug.install: bytes.install fmt.install io/ioutil.install os.install runtime.install
+runtime/pprof.install: bufio.install fmt.install io.install os.install runtime.install sync.install
+scanner.install: bytes.install fmt.install io.install os.install unicode.install utf8.install
+smtp.install: crypto/tls.install encoding/base64.install io.install net.install net/textproto.install os.install strings.install
+sort.install: math.install
+strconv.install: bytes.install math.install os.install strings.install unicode.install utf8.install
+strings.install: os.install unicode.install utf8.install
+sync.install: runtime.install sync/atomic.install
+sync/atomic.install:
+syscall.install: sync.install utf16.install
+syslog.install: fmt.install log.install net.install os.install
+tabwriter.install: bytes.install io.install os.install utf8.install
+template.install: bytes.install fmt.install io.install io/ioutil.install os.install path/filepath.install reflect.install runtime.install strings.install template/parse.install unicode.install url.install utf8.install
+template/parse.install: bytes.install fmt.install os.install runtime.install strconv.install strings.install unicode.install utf8.install
+testing.install: flag.install fmt.install os.install runtime.install runtime/pprof.install strconv.install strings.install time.install
+testing/iotest.install: io.install log.install os.install
+testing/quick.install: flag.install fmt.install math.install os.install rand.install reflect.install strings.install
+testing/script.install: fmt.install os.install rand.install reflect.install strings.install
+time.install: bytes.install container/heap.install io/ioutil.install os.install strconv.install strings.install sync.install syscall.install
+try.install: fmt.install io.install os.install reflect.install unicode.install
+unicode.install:
+url.install: os.install strconv.install strings.install
+utf16.install: unicode.install
+utf8.install: unicode.install
+websocket.install: bufio.install bytes.install crypto/md5.install crypto/tls.install encoding/binary.install fmt.install http.install io.install net.install os.install rand.install strings.install url.install
+xml.install: bufio.install bytes.install fmt.install io.install os.install reflect.install strconv.install strings.install unicode.install utf8.install
+../cmd/cgo.install: bytes.install crypto/md5.install debug/dwarf.install debug/elf.install debug/macho.install debug/pe.install encoding/binary.install exec.install flag.install fmt.install go/ast.install go/doc.install go/parser.install go/printer.install go/scanner.install go/token.install io.install io/ioutil.install os.install path/filepath.install reflect.install runtime.install strconv.install strings.install unicode.install
+../cmd/ebnflint.install: bytes.install ebnf.install flag.install fmt.install go/scanner.install go/token.install io/ioutil.install os.install path/filepath.install
+../cmd/godoc.install: archive/zip.install bytes.install container/vector.install expvar.install flag.install fmt.install go/ast.install go/build.install go/doc.install go/parser.install go/printer.install go/scanner.install go/token.install http.install http/pprof.install index/suffixarray.install io.install io/ioutil.install log.install os.install path.install path/filepath.install regexp.install runtime.install sort.install strconv.install strings.install sync.install template.install time.install unicode.install url.install utf8.install xml.install
+../cmd/gofix.install: bytes.install exec.install flag.install fmt.install go/ast.install go/parser.install go/printer.install go/scanner.install go/token.install io/ioutil.install os.install path/filepath.install reflect.install sort.install strconv.install strings.install
+../cmd/gofmt.install: bytes.install exec.install flag.install fmt.install go/ast.install go/parser.install go/printer.install go/scanner.install go/token.install io.install io/ioutil.install os.install path/filepath.install reflect.install runtime/pprof.install strings.install unicode.install utf8.install
+../cmd/goinstall.install: bytes.install exec.install flag.install fmt.install go/build.install go/token.install http.install io/ioutil.install os.install path/filepath.install regexp.install runtime.install strconv.install strings.install template.install
+../cmd/gotest.install: bufio.install exec.install fmt.install go/ast.install go/parser.install go/token.install io/ioutil.install os.install path/filepath.install runtime.install strconv.install strings.install time.install unicode.install utf8.install
+../cmd/gotype.install: flag.install fmt.install go/ast.install go/parser.install go/scanner.install go/token.install go/types.install io/ioutil.install os.install path/filepath.install strings.install
+../cmd/govet.install: flag.install fmt.install go/ast.install go/parser.install go/token.install io.install os.install path/filepath.install reflect.install strconv.install strings.install utf8.install
+../cmd/goyacc.install: bufio.install bytes.install flag.install fmt.install os.install strings.install
+../cmd/hgpatch.install: bytes.install container/vector.install exec.install flag.install fmt.install io/ioutil.install os.install patch.install path/filepath.install sort.install strings.install
+os/inotify.install: fmt.install os.install strings.install syscall.install

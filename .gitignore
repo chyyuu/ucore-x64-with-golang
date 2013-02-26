@@ -15,3 +15,8 @@
 *.exe
 *.out
 *.app
+go/bin/
+go/pkg/
+ucore/obj
+*~
+*.org
